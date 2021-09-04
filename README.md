@@ -12,6 +12,5 @@ bundle
 rails db:create
 rails db:migrate
 rails db:seed
-yank install
 rails s
 ```
