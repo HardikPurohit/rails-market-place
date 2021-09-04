@@ -1,0 +1,18 @@
+<h2> Products</h2>
+<br /><br />
+<table class='table'>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.price %></td>
+       <td>
+        <%= link_to 'View', product_path(product), title: 'View product' %>
+      </td>
+    </tr>
+  <% end %>
+</table>

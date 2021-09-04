@@ -1,0 +1,5 @@
+<% flash.each do |key, value| %>
+  <div class="alert <%= flash_class(key) %> alert-dismissible fade show m-t-30 m-b-0">
+    <strong><%= value %></strong>
+  </div>
+<% end %>

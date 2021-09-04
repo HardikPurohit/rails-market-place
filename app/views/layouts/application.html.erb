@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsTest</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%- if current_user.present? %>
+      <%= render partial: 'layouts/header' %>
+    <% end %>
+    <div class="container">
+      <%= render 'users/shared/flash_messages' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

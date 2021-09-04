@@ -1,0 +1,17 @@
+<%- if controller_name != 'sessions' %>
+  <%- if controller_name == 'registrations' %>
+    <%- if params[:role] == 'buyer' %>
+      <%= link_to "Sign up as Seller", new_user_registration_path('seller') %>
+    <% elsif params[:role] == 'seller' %>
+      <%= link_to "Sign up as Buyer", new_user_registration_path('buyer') %>
+    <% end %>
+  <% end %>
+  <div class="clearfix"></div>
+  <%= link_to "Log in", new_session_path(resource_name) %>
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign up as Buyer", new_user_registration_path('buyer') %>
+  <div class="clearfix"></div>
+  <%= link_to "Sign up as Seller", new_user_registration_path('seller') %>
+<% end %>
