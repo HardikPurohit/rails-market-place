@@ -10,4 +10,8 @@ class Product < ApplicationRecord
   def name
     product_type.try(:name)
   end
+
+  def user_name
+    user.try(:user_profile).try(:name)
+  end
 end

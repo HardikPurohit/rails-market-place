@@ -3,14 +3,20 @@
 <table class='table'>
   <tr>
     <th>Name</th>
-    <th>Price</th>
+    <th>
+      <%= sort_link(@q, :price) %>
+    </th>
+    <th>
+      Seller
+    </th>
     <th>Action</th>
   </tr>
   <% @products.each do |product| %>
     <tr>
       <td><%= product.name %></td>
       <td><%= product.price %></td>
-       <td>
+      <td><%= product.try(:user_name) %></td>
+      <td>
         <%= link_to 'View', product_path(product), title: 'View product' %>
       </td>
     </tr>
