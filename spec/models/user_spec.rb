@@ -10,6 +10,15 @@ RSpec.describe User, type: :model do
       end
     end
 
+    context 'When email is duplicate' do
+      it 'returns user count one' do
+        create(:user)
+        user = build(:user)
+        user.save
+        expect(User.count).to eq 1
+      end
+    end
+
     context 'When password is not present' do
       it 'returns user count zero' do
         user = build(:user, password: nil)
