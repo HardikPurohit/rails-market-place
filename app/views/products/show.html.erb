@@ -1,3 +1,6 @@
+<%= link_to 'All Products', products_path %>
 <h2>Product Name: <%= @product.name %></h2>
 <br />
 Price: <%= @product.price %>
+<br />
+Seller: <%= @product.try(:user_name) %>
